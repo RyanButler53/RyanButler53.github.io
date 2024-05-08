@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Path of Legends</title>
+    <link rel="stylesheet" href="../../styles.css"> <!-- Link to your CSS file -->
+</head>
+<body>
+    <h1>Path of Legends Simulation</h1>
+    
+    <h3> Project Date: March 2023 </h3>
+
+    <h2> Project Summary</h2>
+    <p>
+        The goal of this project was to create an efficient simulation of Clash Royale's Path of Legends (POL). 
+        The project was motivated by the question "How do we make the Path of Legends more enjoyable?" This question 
+        began the investigation into the trade offs between making the POL shorter and maintaining 1% of players finishing the path every season. 
+
+        I first built a simulation from scratch in C++ then added in a bunch of different parameters to tweak with Path parameters. 
+        Using this simulation, I encoded the current path system rules into my model and used this to figure out how many battles were played in a season. 
+        I found this number to be roughly 62 million. After this, I wrote a short experiment script to try out different path of legends configurations. 
+
+        By the end of experimentation, I found two sets of parameters that made the path 
+        take less time to complete but kept the end of the path restricted to the top 1% of players. 
+    </p>
+    
+    <p>For a more detailed writeup, please check out the full document <a href="../../project-writeups/pol.pdf">here</a>.</p>
+    
+
+    <h2> Learning Objectives:</h2>
+
+    <ul>
+        <li>Improving C++ Development skills</li>
+        <li>Shell Scripting</li>
+        <li>Increasing speed using cache locality</li>
+        <li>Matplotlib graphing</li>
+
+    </ul>
+</body>
+</html>
