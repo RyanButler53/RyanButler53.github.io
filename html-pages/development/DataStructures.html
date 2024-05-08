@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Path of Legends</title>
+    <link rel="stylesheet" href="../../styles.css"> <!-- Link to your CSS file -->
+</head>
+<body>
+    <h1>Data Structure Implementations</h1>
+    
+    <h3> Project Date: May 2023 - Current </h3>
+
+    <h2> Project Summary</h2>
+    <p>
+       The purpose of this project is to create C++ header only templates of cool data structures. The coolest data structure is the Splay Tree. 
+       I began each data structure by reading the paper that proposed it or other online resources. 
+       From there, I created a C++ header template implementing each data structure. I created a separate github repository for each data structure. (Some have to stay private unfortunately) 
+    </p>
+
+    <h2>List of Data Structures Implemented</h2>
+    <div class="centerlist">
+        <ul class="no-bullets">
+            <li><a href="#Splay Tree">Splay Tree</a></li>
+            <li><a href="#Cuckoo Hash"> Cuckoo Hash</a></li>
+            <li><a href="#Scapegoat Tree">Scapegoat Tree</a></li>
+            <li><a href="#Interval Tree">Interval Tree</a></li>
+            <li><a href="#Quack">Quack</a></li>
+            <li><a href="#MinQueue">Minqueue</a></li>
+        </ul>
+    </div>
+    
+    <i>The data structures become less practical and more an exercise or less complete further in the list. </i>
+
+    <section id="Splay Tree">
+
+        <h3> Splay Tree </h3>
+            <p>A Splay Tree is a type of self balancing tree. It was first introduced by Daniel Sleator and Robert Tarjan in 1985 in 
+                <a href="https://www.cs.cmu.edu/~sleator/papers/self-adjusting.pdf">this paper</a>.
+                Splay Trees work by rebalancing themselves on every operation by doing the Splay Operation. This implementation of the Splay tree is memory efficient as there is no parent pointer in each node. 
+            </p>
+
+            <p>
+                The code for the Splay Tree is in <a href="https://github.com/RyanButler53/splay-tree"> this github repo</a>. 
+
+                Interface and implementation details for my implementation are in the README for in the github repo. All time complexities match the asymtotic bounds specified in Sleator and Tarjan's 1985 paper.
+            </p>
+
+        <!-- <p><code>insert(key, value)</code>: Inserts key into the tree with value value. No return value.</p>
+        <p><code>remove(key)</code>: Removes key from the tree. If the key is not present, splays the tree such the last leaf node becomes the new root. No return</p>
+        <p><code>find(key)</code>: Returns an iterator pointing to the key-value pair. If the key is not present, then returns the end iterator.</p>
+        <p><code>exists(key)</code>: Checks if a key is in the tree. Performs the splay operation.</p>
+        <p><code>begin()</code>: Returns an iterator pointing to the beginning of the tree.</p>
+        <p><code>end()</code>: End iterator. Allows for for (auto iter : splayTree) use.</p>
+        <p><code>size()</code>: Returns the tree size.</p>
+        <p><code>operator[key]</code>: Returns the value (not an iterator) associated with key. Undefined for keys that aren't in the tree, does not allow for insertion inside the tree</p> -->
+
+    <!-- <p>All time complexities meet the asymtotic bounds specified in Sleator and Tarjan's 1985 paper.</p> -->
+
+    </section>
+    
+    <section id="Cuckoo Hash">
+
+        <h3>Cuckoo Hash Set/Map</h3>
+        <p>        A Cuckoo Hash Table is a data structure that can implement a dictionary with worst-case constant time lookups.  
+            My code implements a Cuckoo Hash Set and Cuckoo Hash Map. 
+            The Cuckoo Hash Table was first seen in <a href="https://www.itu.dk/people/pagh/papers/cuckoo-jour.pdf"> this paper </a> by 
+            Rasmus Pugh and Flemming Rodler in 2003. The first hash function used was the std::hash of the type and then using the std::hash function for strings based on the output of the first hash function. 
+            Future work will involve finding a better hash function. I hesitate to implement SHA-256 or another cryptographic hash function because they are too slow. 
+        </p>
+     
+     
+        </section>
+
+
+    <section id="Scapegoat Tree">
+        <h3>Scapegoat Tree</h3>
+        <p>A Scapegoat tree is a type of self balancing tree that does not use rotation. This allows it to be used for k-d trees which cannot 
+            have rotation.  The scapegoat tree was first proposed by <a href="AA trees">Arne Anderson in 1989</a> and were rediscovered in 1993 by
+             <a href="http://webhotel4.ruc.dk/~keld/teaching/algoritmedesign_f03/Artikler/03/Galperin93.pdf"> Ronald Rivest and Igal Galperin </a>
+
+             This repository is private as this was written for a class. (It is expected to go public in June 2024) This code implements insert, exists, remove and search functionality.
+             All runtimes match with Rivest and Galperin's description however the rebuilding process requires <i>O(n)</i> additional space instead of <i>O(log n)</i> space. 
+        </p>
+
+    </section>
+
+    <section id="Interval Tree">
+        <h3> Interval Tree</h3>
+        <p> An interval Tree is a tree that stores intervals and allows for efficiently querying which intervals overlap a given number.
+             My implementation of 
+            an interval tree is not self balancing so it is possible to build a stick and have inefficient queries for overlapping intervals. 
+
+            This tree implements the following operations: 
+            <ul class="ul-small">
+                <li>Insert: Inserts an interval into the tree</li>
+                <li>findOverlaps(query): Takes in a given point and returns all intervals that overlap with this interval</li>
+                <li>findSupersets(low,high): Finds the intervals where the lower bound of the interval is less than the low parameter and the intervals where the upper bound is above the high parameter </li>
+
+            </ul>
+
+        </p>
+    </section>
+
+    <section id="Quack">
+        <h3>Quack</h3>
+        <p>A Quack is an Abstract Data Type that implements a Queue and a Stack using 3 stacks. This ADT is an excercise in amortization to show that 
+            this scheme can perform these operations in constant amortized time: 
+            <ul class="ul-small">
+                <li>push(item)</li>
+                <li>push_front(item)</li>
+                <li>pop()</li>
+                <li>dequeue()</li>
+                <li>front()</li>
+                <li>back()</li>
+                <li>empty()</li>
+            </ul>
+
+            <p>
+                The code for a Quack is in <a href="https://github.com/RyanButler53/Quack">this repository</a>. The quack is implemented with 2 std::vectors
+            and to avoid using a 3rd stack and save time, I used  std::reverse_copy() to reshuffle the stacks. 
+                <br>
+            Finally I conducted a small benchmarking experiment to see how the performance of my quack compared to the std::queue implementation. 
+            A Quack does not implement the std::queue interface because the worst case of pop() can be linear time. The results of the experiment are in the README
+            file in the repo. I found that the cache locality of the quack's vectors improved runtime by around 10x-14x. 
+            </p>
+        
+        </p> 
+    </section>
+    <section id="MinQueue">
+        <h3>Minqueue</h3>
+        <p>
+            The Minqueue is another amortization excercise in a data structure. The minqueue is a queue that implements standard queue functionality but 
+            can find the minimum value in the queue in constant time. The code to implement a minqueue is <a href="https://github.com/RyanButler53/Minqueue"></a>. 
+    </p>
+    <p>I have yet to find a practical use case for a minqueue. </p>
+        
+    </section>
+
+    <h2> Learning Objectives:</h2>
+
+    <ul>
+        <li>Improving C++ Development skills</li>
+        <li>Learn about cool data structures</li>
+
+    </ul>
+</body>
+</html>

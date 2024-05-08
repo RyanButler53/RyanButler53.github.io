@@ -5,6 +5,69 @@
     <title>New York Times Database Project</title>
 </head>
 <body>
+    <h1> New York Times Archive Visualization</h1>
     
+    <h3> Project Date: March 2024 - Current </h3>
+
+    <h2>Summary</h2>
+    <p>
+        The goal of this project was to build up a large database of New York Times data from 
+        the<a href="https://developer.nytimes.com/docs/archive-product/1/overview"> NYT Archive API</a>
+        I wanted to learn how to use SQLite to make and query a database. I thought that the most interesting 
+        quantities to visualize from the New York Times Archive were 
+        <ul>
+            <li>Number of Keywords in an article</li>
+            <li> Abstract Length</li>
+            <li> Article Length</li>
+            <li> Headline Length</li>
+            <li> Frequency of a given search term over time</li>
+        </ul>
+        This project was split up into 2 parts: Building the database and visualizing the data. The code isn't fully cleaned up (ie the key isn't stored safely)
+         or uploaded to github yet at all. 
+    </p>
+
+    <section id="Guiding Questions">
+        <h3>Guiding Questions</h3>
+        <ul>
+            <li>Have articles gotten longer over time? </li>
+            <li>Have article abstract lengths changed over time?</li>
+            <li>Have article headline lengths gotten shorter over time</li>
+            <li>Are there more keywords in articles today than in any point throughout history?</li>
+            <li>Is Trump Fatigue real? How has the frequency of the search term "Donald Trump" in Abstracts decreased over the last 3 years?</li>
+        </ul>
+    </section>
+
+    <section id="Building the DB">
+        <h3>Building The Database</h3>
+        <p> To build the database I decided on the database schema and kept track of the things in each API call that were needed
+        There is a limit of 5 api calls per minute and 500 per second. This allows me to get roughly 40 years of data per day. 
+        </p>
+    </section>
+
+    <section id="Data Visualization">
+        <h3>Visualization</h3>
+        Most of the guiding questions focused on showing the value of some quantity over time. This meant that I could create graphs
+        with a single function and use it for all the graphs. 
+        <br>
+        The only graph I couldn't make like this is for the frequency  of certain search terms because it requires a different SQL query. 
+
+    </section>
+
+    <section id="Roadmap">
+        <h2>Roadmap</h2>
+        <ul>
+            <li>Put the API key in a file and add to gitignore. Then upload to github</li>
+            <li> Make the notebooks more reader friendly so they are easier to run </li>
+            <li> Create a script to do the Visualization easier with custom inputs. </li>
+            </ul>
+        </ul>
+    </section>
+
+    <h2> Learning Objectives:</h2>
+
+    <ul>
+        <li>Use SQLite to create and query a database </li>
+        <li>Look at interesting trends in New York Times data</li>
+    </ul>
 </body>
 </html>

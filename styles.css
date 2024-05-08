@@ -23,8 +23,8 @@ h2 {
 
 p {
     font-size: 14px;
-    padding-right: 20px;
-    padding-left: 20px;
+    padding-right: 80px;
+    padding-left: 80px;
 }
 
 
@@ -48,12 +48,35 @@ body {
   }
   
 .column {
-flex: 1; /* Each column takes up half of the row */
-display: flex; /* Nested flexbox to center the title text */
-flex-direction: column; /* Stack list items vertically */
-align-items: center; /* Center horizontally */
+    flex: 1; /* Each column takes up half of the row */
+    display: flex; /* Nested flexbox to center the title text */
+    flex-direction: column; /* Stack list items vertically */
+    align-items: center; /* Center horizontally */
 }
 
 .column ul {
     text-align: left; /* Align list items to the left */
+}
+
+.centerlist {
+    text-align: center; /* Center the list */
+}
+
+
+.no-bullets {
+    list-style: none; /* Remove bullet points */
+    padding-left: 0; /* Remove default padding */
+}
+
+code {
+    background-color: #f0f0f0; /* Light gray background */
+    padding: 4px; /* Padding around the code */
+    border: 1px solid #ccc; /* Gray border */
+    font-family: monospace; /* Use monospace font for consistent spacing */
+    /*display: block; /* Block-level display to ensure proper styling */
+    white-space: pre-wrap; /* Preserve white spaces and wrap lines */
+}
+
+.ul-small {
+    font-size: 14px;
 }
