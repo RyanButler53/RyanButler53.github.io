@@ -1,10 +1,73 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="UTF-8" />
-    <title>title</title>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Total Serialism</title>
+        <link rel="stylesheet" href="../../styles.css"> 
+    </head>
 <body>
+    <h1>Generating Total Serialism Sheet Music</h1>
     
+    <h3> Project Date: Thanksgiving Break 2023 </h3>
+
+    <h2> Project Summary</h2>
+    <p>
+        This project aims to either take in some structure for a total serialist piece of music or just a random seed and 
+        will create a piece of total serialist music. The project essentially implements a compiler for a simple (ish) total serialism "language" 
+        or takes a random seed and creates lilypond code. It then runs the lilypond compiler to make a PDF of the sheet music. 
+
+        Future iterations of the project will make the Total serialist Language more fleshed out with more options and include a better front end for random music. 
+        I am unable to make midi playback work however I don't particularly want to hear more total serialist music. 
+    </p>
+
+    <section id="What is Total Serialism">
+        <h2> What is Total Serialism?</h2>
+        <p>Total Serialism is a type of music where everything is predetermined before writing
+            Total Serialism generalizes on the idea of serialism and uses the rows to apply to rhythms, articulations and dynamics. 
+            Serialist style music (or 12-Tone) music uses all 12 tones in an equal temperment system (ie a piano) to make music. 
+            It is written by creating a row (denoted as P-0) and using the P-0 row to build a 12 tone matrix out of it. 
+            Using this matrix, one can use different transpositions or inversions of the row to make music. The P-0 row is chosen
+            before writing the music and which combinations of inverted, transposed or reversed rows are used. 
+            In Serialist music the composer gets to choose the octave of the note and the rhythm as well as add their own dynamics or 
+            artiulations as they see fit. 
+        </p>
+        <p>
+            However, in Total Serialism, Rhythms, Dynamics and Articulation are also
+            predetermined by a row. This lends itself to a very algorithmic approach to music composition. 
+
+            <br>
+            Total Serialism style music often is extremely unappealing to listen to and is very difficult to play due to the 
+            precision needed. However its algorithmic nature lends itself nicely for a programming project.
+        </p>
+    </section>
+
+    <section id="The Project">
+        <h2>The Project</h2>
+        <p>This project leverages the <a href="https://lilypond.org">Lilypond</a> compiler to turn a text file into sheet music through a shell script. 
+            There are two modes of generation: Randomly generated music or music generated off of the mini total serialist language. 
+            When the mode of music generation is random, all rows are randomly generated while when using a text input file they are from the user's input. </p>
+        
+        <p>
+            The program then creates the appropriate 12 tone matrices for each row then generates music from them. 
+            Each row is added to a text file in proper lilypond syntax.  
+        </p>
+
+        <p>The program is run through a shell script that invokes the lilypond compiler and opens the resulting sheet music.</p>
+    </section>
+
+    <section id="code">
+        <h2>Codebase and Roadmap</h2>
+        <p>The code is in <a href="github.com/RyanButler53/total-serialism"></a>
+        It is not quite done and there is no front end. Some roadmap items include 
+        <ul>
+            <li>Add better user input error checking</li>
+            <li>Add a proper front end so it is easier to run the code correctly and prevent user errors </li>
+            <li>Add support for different time signatures. </li>
+        </ul>
+            
+        </p>
+    </section>
+
 </body>
 </html>

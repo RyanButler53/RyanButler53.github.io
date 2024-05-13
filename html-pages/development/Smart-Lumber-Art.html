@@ -2,7 +2,9 @@
 <html>
 <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Smart Lumber Art</title>
+    <link rel="stylesheet" href="../../styles.css"> 
 </head>
 <body>
     <h1>Smart Lumber Artwork </h1>
@@ -30,7 +32,7 @@
             Backtracking to get the actual solution is harder. To backtrack, each cell needs to keep the two cells or cuts it came from and a special zero cut to check if it was 
             a sell case. Getting the cuts means getting the start and end points of a line segment that represent the cut and the start and end diagonals of the 
             rectangle. This is done through a depth first search 
-            strategy, pushing to the stach as soon as a line segment is found and the computing the second corner of the square. 
+            strategy, pushing to the stack as soon as a line segment is found and the computing the second corner of the square. 
         </p>
 
     </section>
@@ -39,14 +41,48 @@
         <p>
             The solution is graphed using matplotlib. The coordinates are sent to python through a unix pipe (the program is run via a shell script).
             The python script reads in the points, graphs the segment and the fills in the appropriate chunk of the graph. If needed it saves the graph
+            to the appropriate file.
         </p>
 
     </section>
 
     <section id="Front End">
+        <h3>Front End</h3>
         <p>
-            This is the first pri
+            This is the first project which I added a front end gui. The front end is a simple gui that has fields for width, height, file, number of images and seed. 
+        
         </p>
+
+       <p>The code will be released publicly sometime in late 2024. </p> 
+
+    </section>
+
+    <section id = "artwork">
+        <h3>Art Showcase</h3>
+        <p>
+            Here are some select cool random artworks I made:
+        </p>
+
+        <img src="../../imgs/art1.png" alt="Random artwork of boxes">
+
+        <img src="../../imgs/art2.png" alt="Random artwork of boxes">
+
+        <img src="../../imgs/art3.png" alt="Random artwork of boxes">
+
+        <img src="../../imgs/art4.png" alt="Random artwork of boxes">
+
+    </section>
+
+    <section id="learnign objectives">
+        <h2> Learning Objectives:</h2>
+
+        <ul>
+            <li>Improving C++ Development skills</li>
+            <li>Pratice writing shell scripts</li>
+            <li>Use PyQt for front end gui development</li>
+            <li>Practice multithreaded designs </li>
+            <li>Explore Randomized art</li>
+        </ul>
 
     </section>
 </body>
